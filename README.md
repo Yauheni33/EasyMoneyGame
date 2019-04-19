@@ -23,3 +23,9 @@ $ ./bin/webpack-dev-server
 ```
 http://localhost:3000
 ```
+
+## Built With
+
+- [Ruby on Rails](https://github.com/rails/rails) &mdash; Our back end API is a Rails app. It responds to requests RESTfully in JSON.
+- [React js](https://github.com/facebook/react) &mdash; Our front end is an React js app that communicates with the Rails API.
+- [PostgreSQL](https://www.postgresql.org/) &mdash; Our main data store is in Postgres.
