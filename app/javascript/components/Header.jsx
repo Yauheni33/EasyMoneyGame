@@ -22,7 +22,7 @@ class Header extends React.Component {
                 <div className="container">            
                     <h1 className="logo pull-left">
                         <a className="scrollto" href="#promo">
-                            <span className="logo-title">###</span>
+                            <span className="logo-title">EasyMoneyGame</span>
                         </a>
                     </h1>           
                     <nav id="main-nav" className="main-nav navbar-right" role="navigation">
