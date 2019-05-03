@@ -2,6 +2,7 @@ import React from "react";
 
 import { BrowserRouter as Router, Route, Link, browserHistory } from 'react-router-dom'
 import routes from "../components/Routes.jsx"
+import { history } from '../components/_helpers';
 
 function RouteWithSubRoutes(route) {
     return (
@@ -15,6 +16,16 @@ function RouteWithSubRoutes(route) {
 }
 
 class Header extends React.Component {
+  constructor(props) {
+      super(props);
+
+      const { dispatch } = this.props;
+      history.listen((location, action) => {
+          // clear alert on location change
+          dispatch(alertActions.clear());
+      });
+  }
+
   render () {
     return (
         <Router>  
