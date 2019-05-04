@@ -3,6 +3,12 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link, browserHistory } from 'react-router-dom'
 import routes from "../components/Routes.jsx"
 import { history } from '../components/_helpers';
+import { alertActions } from '../components/_actions';
+import { PrivateRoute } from '../components/_components';
+import { HomePage } from '../components/HomePage';
+import { LoginPage } from '../components/LoginPage';
+import { RegisterPage } from '../components/RegisterPage';
+import {Button} from 'react-bootstrap'
 
 function RouteWithSubRoutes(route) {
     return (
@@ -27,8 +33,9 @@ class Header extends React.Component {
   }
 
   render () {
+    const { alert } = this.props;
     return (
-        <Router>  
+        <Router history={history}>  
             <header id="header" className="header" style={{position: "inherit"}}>  
                 <div className="container">            
                     <h1 className="logo pull-left">
@@ -53,6 +60,8 @@ class Header extends React.Component {
                                 <li className="nav-item"><Link to="/docs" className="nav-link">Docs</Link></li>
                                 <li className="nav-item"><Link to="/license" className="nav-link">License</Link></li>
                                 <li className="nav-item"><Link to="/contact" className="nav-link" innerRef={node => {}}>Contact</Link></li>
+                                <Button style={{marginTop: "5px", height: "36px"}}><Route path="/login" component={LoginPage} />Login</Button>
+                                <Button style={{marginTop: "5px", height: "36px", marginLeft: "15px"}}><Route path="/register" component={RegisterPage} />Register</Button>
                             </ul>
                         </div>
                     </nav>
